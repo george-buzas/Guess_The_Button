@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Guess the button!</title>
+  </head>
+  <body>
+    <h1>Guess the button!</h1>
+        <script>  
+          // Create a <button> element
+          var btn1 = document.createElement("BUTTON"), btn2 = document.createElement("BUTTON"), btn3 = document.createElement("BUTTON");
+          // Insert text
+          btn1.innerHTML = "Button 1";
+          btn2.innerHTML = "Button 2";
+          btn3.innerHTML = "Button 3"; 
+          // Append button to body             
+          document.body.appendChild(btn1);
+          document.body.appendChild(btn2);
+          document.body.appendChild(btn3);
+          // Create a function that when called, alerts the user whether he/ she guessed the right button    
+          function guessRandomButton() {
+                var randomButton = Math.floor(Math.random() * 4 ) + 1;
+                if (randomButton == 1) {
+                    return alert("You are lucky today! You guessed the right button!");
+                }
+                return alert("You did not guess the right button :(");
+          }
+          // Adds events for the buttons that have been created
+          // When the buttons will be clicked, the above function will be applied to the buttons
+          btn1.addEventListener("click", guessRandomButton);
+          btn2.addEventListener("click", guessRandomButton);
+          btn3.addEventListener("click", guessRandomButton);
+        </script>
+  </body>
+</html>
